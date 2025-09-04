@@ -41,6 +41,32 @@ def main():
     beverage5 = Whip(beverage5)
     print(f"Pedido 5: {beverage5.get_description()} ${beverage5.cost():.2f}")
 
+    # Pedido 6: Un Espresso con Soja y Mocha (Venti).
+    beverage = Espresso()
+    beverage.set_size("Venti")
+    beverage = Soy(beverage)
+    beverage = Mocha(beverage)
+    beverage = Whip(beverage)
+    print(f"Pedido 6: {beverage.get_description()} ({beverage.get_size()}) ${beverage.cost():.2f}")
+
+    # Pedido 7: Un HouseBlend con Soja, Caramelo, Mocha y Crema (Grande).
+    beverage = HouseBlend()
+    beverage.set_size("Grande")
+    beverage = Soy(beverage)
+    beverage = Caramel(beverage)
+    beverage = Mocha(beverage)
+    beverage = Whip(beverage)
+    print(f"Pedido 7: {beverage.get_description()} ({beverage.get_size()}) ${beverage.cost():.2f}")
+
+    # Pedido 8: Un DarkRoast con Soy, doble Mocha, Caramelo y Crema (Venti).
+    beverage = DarkRoast()
+    beverage.set_size("Venti")
+    beverage = Soy(beverage)
+    beverage = Mocha(beverage)
+    beverage = Mocha(beverage)
+    beverage = Caramel(beverage)
+    beverage = Whip(beverage)
+    print(f"Pedido 8: {beverage.get_description()} ({beverage.get_size()}) ${beverage.cost():.2f}")
 
 if __name__ == "__main__":
     main()

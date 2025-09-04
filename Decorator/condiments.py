@@ -14,6 +14,9 @@ class CondimentDecorator(Beverage, ABC):
     def __init__(self, beverage: Beverage):
         self._beverage = beverage
 
+    def get_size(self) -> str:
+        return self._beverage.get_size()
+
     @abstractmethod
     def get_description(self) -> str:
         pass
@@ -47,7 +50,10 @@ class Soy(CondimentDecorator):
         return self._beverage.get_description() + ", Soja"
 
     def cost(self) -> float:
-        return self._beverage.cost() + 0.15
+        extras = {"Tall": 0.10, "Grande": 0.15, "Venti": 0.20}
+        # Si no se encuentra el tamaño, se cobra el extra mínimo - Tall
+        extra = extras.get(self.get_size(), 0.10) 
+        return self._beverage.cost() + extra
 
 class Whip(CondimentDecorator):
     """
