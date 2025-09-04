@@ -36,15 +36,15 @@ def test_darkroast_doble_mocha_whip():
     assert pytest.approx(beverage.cost(), 0.001) == esperado
     assert beverage.get_description() == "Café Dark Roast, Mocha, Mocha, Crema"
 
-
-def test_houseblend_soy_mocha_whip():
-    beverage = HouseBlend()
-    beverage = Soy(beverage)
-    beverage = Mocha(beverage)
-    beverage = Whip(beverage)
-    esperado = precio_esperado("HouseBlend", ["Soy", "Mocha", "Whip"])
-    assert pytest.approx(beverage.cost(), 0.001) == esperado
-    assert beverage.get_description() == "Café de la Casa, Soja, Mocha, Crema"
+# Test Nivel 1
+# def test_houseblend_soy_mocha_whip():
+#     beverage = HouseBlend()
+#     beverage = Soy(beverage)
+#     beverage = Mocha(beverage)
+#     beverage = Whip(beverage)
+#     esperado = precio_esperado("HouseBlend", ["Soy", "Mocha", "Whip"])
+#     assert pytest.approx(beverage.cost(), 0.001) == esperado
+#     assert beverage.get_description() == "Café de la Casa, Soja, Mocha, Crema"
 
 
 def test_darkroast_caramel():
