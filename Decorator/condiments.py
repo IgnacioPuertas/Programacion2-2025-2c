@@ -74,37 +74,3 @@ class Caramel(CondimentDecorator):
 
     def cost(self) -> float:
         return self._beverage.cost() + 0.25
-
-
-# class PrettyPrintDecorator(CondimentDecorator):
-#     """
-#     Decorador de presentación: transforma descripciones repetidas en 'Double', 'Triple', etc.
-#     No afecta el costo, solo el texto.
-#     """
-
-#     def get_description(self) -> str:
-#         desc = self._beverage.get_description()
-#         parts = [p.strip() for p in desc.split(",")]
-
-#         # contamos ocurrencias en orden de aparición
-#         pretty_parts = []
-#         seen = set()
-#         for p in parts:
-#             if p in seen:
-#                 continue
-#             count = parts.count(p)
-#             if count == 1:
-#                 pretty_parts.append(p)
-#             elif count == 2:
-#                 pretty_parts.append(f"Double {p}")
-#             elif count == 3:
-#                 pretty_parts.append(f"Triple {p}")
-#             else:
-#                 pretty_parts.append(f"{count}x {p}")
-#             seen.add(p)
-
-#         return ", ".join(pretty_parts)
-
-#     def cost(self) -> float:
-#         # No modifica el precio, solo pasa el costo de la bebida envuelta
-#         return self._beverage.cost()
