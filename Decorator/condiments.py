@@ -17,6 +17,10 @@ class CondimentDecorator(Beverage, ABC):
     def get_size(self) -> str:
         return self._beverage.get_size()
 
+    def set_size(self, size: str) -> None:
+        # Propaga el cambio de tamaño a la bebida interna
+        self._beverage.set_size(size)
+
     @abstractmethod
     def get_description(self) -> str:
         pass

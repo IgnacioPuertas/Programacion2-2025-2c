@@ -41,6 +41,13 @@ class Beverage(ABC):
         """
         pass
 
+    def __str__(self) -> str:
+        """
+        Representación en string de la bebida: descripción + tamaño + costo.
+        Ejemplo: "Café de la Casa (Venti) - $1.09"
+        """
+        return f"{self.get_description()} ({self.get_size()}) - ${self.cost():.2f}"    
+
 # --- Componentes Concretos ---
 class HouseBlend(Beverage):
     def __init__(self, size: str = "Tall"):
@@ -70,6 +77,10 @@ class Decaf(Beverage):
 
 
 class Espresso(Beverage):
+    """
+    Espresso es una bebida concreta con costo fijo.
+    Hereda tamaño de Beverage pero su precio no depende del tamaño.
+    """
     def __init__(self, size: str = "Tall"):
         super().__init__(size=size)
         self.description = "Espresso"
