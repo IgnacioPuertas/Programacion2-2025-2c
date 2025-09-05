@@ -4,4 +4,4 @@
 - Federico Nicolás Llanes
 - Miguel Ignacio Rodríguez Puertas
 - Karen Gonzales Ch.
-- Ayelén Scayati
+- Ayelén Luján Scafati
