@@ -61,6 +61,17 @@ class PizzaIngredientFactory(ABC):
     def create_cheese(self) -> Cheese: ...
     @abstractmethod
     def create_clam(self) -> Clams: ...
+    
+# ╔═══════════════════════════════════════════════════════════════════════╗
+# ║ Paso 2.2 — Agregamos nuevos métodos abstractos                        ║
+# ║ para crear los tipos de ingredientes (Veggies y Pepperoni).           ║
+# ╚═══════════════════════════════════════════════════════════════════════╝
+    @abstractmethod
+    def create_Veggies(self) -> list["Veggies"]: ...
+    @abstractmethod
+    def create_pepperoni(self) -> Pepperoni: ...
+
+
 
 # Concrete factories
 class NYPizzaIngredientFactory(PizzaIngredientFactory):
