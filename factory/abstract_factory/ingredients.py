@@ -31,7 +31,7 @@ class Clams:
 
     def __str__(self):
         return self.name
-    
+
 # ╔═════════════════════════════════════════════╗
 # ║ Paso 2.1 — Creamos las clases para los      ║
 # ║ ingredientes nuevos (Veggies y Pepperoni).  ║
