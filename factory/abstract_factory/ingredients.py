@@ -67,14 +67,14 @@ class PizzaIngredientFactory(ABC):
 # ║ para crear los tipos de ingredientes (Veggies y Pepperoni).           ║
 # ╚═══════════════════════════════════════════════════════════════════════╝
     @abstractmethod
-    def create_Veggies(self) -> list["Veggies"]: ...
+    def create_veggies(self) -> list["Veggies"]: ...
     @abstractmethod
     def create_pepperoni(self) -> Pepperoni: ...
 
 
 # ╔═══════════════════════════════════════════════════════════════════════╗
 # ║ Paso 2.3 — Actualizamos las fábricas concretas:                       ║
-# ║ Implementamos create_veggies( ) y create_pepperoni( ) en              ║
+# ║ Implementamos create_veggies() y create_pepperoni() en                ║
 # ║ NYPizzaIngredientFactory y ChicagoPizzaIngredientFactory,             ║
 # ║ devolviendo familias de ingredientes según la región.                 ║
 # ╚═══════════════════════════════════════════════════════════════════════╝
@@ -89,7 +89,7 @@ class NYPizzaIngredientFactory(PizzaIngredientFactory):
         return Cheese("Reggiano Cheese")
     def create_clam(self) -> Clams:   return Clams("Fresh Clams")
 
-    def create_Veggies(self) -> list:
+    def create_veggies(self) -> list:
         return [Veggies("Garlic"), Veggies("Onion"), Veggies("Mushroom"), Veggies("Red Pepper")]
     
     def create_pepperoni(self) -> Pepperoni:
@@ -105,7 +105,7 @@ class ChicagoPizzaIngredientFactory(PizzaIngredientFactory):
         return Cheese("Mozzarella Cheese")
     def create_clam(self) -> Clams:   return Clams("Frozen Clams")
 
-    def create_Veggies(self) -> list:
+    def create_veggies(self) -> list:
         return [Veggies("Black Olives"), Veggies("Spinach"), Veggies("Eggplant")]
     def create_pepperoni(self) -> Pepperoni:
         return Pepperoni("Sliced Pepperoni")

@@ -9,7 +9,7 @@ class Pizza(ABC):
         self.sauce = None
         self.cheese = None
         self.clam = None
-        # Paso 2: Agregamos nuevos atributos (Veggies y Pepperoni):
+        # Paso 2: Agregamos nuevos atributos (veggies y pepperoni):
         self.veggies = [  ]  
         self.pepperoni = None 
 
@@ -43,9 +43,10 @@ class ClamPizza(Pizza):
         print(" ->", self.dough, "/", self.sauce, "/", self.cheese, "/", self.clam)
 
 
-# ╔═════════════════════════════════════════════════════════════════╗
-# ║ Paso 2.4 — Agregamos las clasesPepperoniPizza y VeggiePizza     ║
-# ╚═════════════════════════════════════════════════════════════════╝
+# ╔═════════════════════════════════════════════════════════╗
+# ║ Paso 2.4 — Agregamos PepperoniPizza y VeggiePizza       ║
+# ║ en factory/abstract_factory/pizza.py                    ║
+# ╚═════════════════════════════════════════════════════════╝
 class PepperoniPizza(Pizza):
     def prepare(self):
         print(f"Preparing {self.name}")
@@ -56,14 +57,14 @@ class PepperoniPizza(Pizza):
         print(" ->", self.dough, "/", self.sauce, "/", self.cheese, "/", self.pepperoni)
 
 class VeggiePizza(Pizza):
-    def perpare(self):
+    def prepare(self):
         print( f"Preparing {self.name}" )
-        self.doug = self.create_dough(  )
+        self.dough = self.f.create_dough(  )
         self.sauce = self.f.create_sauce(  )
         self.cheese = self.f.create_cheese(  )
-        self.veggies = self.f.create_Veggies(  )
+        self.veggies = self.f.create_veggies(  ) 
         if self.veggies :
-            print( "->", self.dough, "/", self.sauce, "/", self.cheese, "/", ", ".join( str(v) for v in self.veggies ))
+            print( "->", self.dough, "/", self.sauce, "/", self.cheese, "/", ", ".join( str(v) for v in self.veggies))
         
         else :
             print( "->", self.dough, "/", self.sauce, "/", self.cheese, "/", self.cheese )
