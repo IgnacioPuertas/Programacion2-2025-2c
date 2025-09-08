@@ -31,6 +31,24 @@ class Clams:
 
     def __str__(self):
         return self.name
+    
+# ╔═════════════════════════════════════════════╗
+# ║ Paso 2.1 — Creamos las clases para los      ║
+# ║ ingredientes nuevos (Veggies y Pepperoni).  ║
+# ╚═════════════════════════════════════════════╝
+class Veggies:
+    def __init__(self, name: str):
+        self.name = name
+
+    def __str__(self) -> str:
+        return self.name
+        
+class Pepperoni:
+    def __init__(self, name: str):
+        self.name = name
+
+    def __str__(self) -> str:
+        return self.name
 
 
 # Abstract Factory
