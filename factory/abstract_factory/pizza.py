@@ -43,10 +43,10 @@ class ClamPizza(Pizza):
         print(" ->", self.dough, "/", self.sauce, "/", self.cheese, "/", self.clam)
 
 
-# ╔═════════════════════════════════════════════════════════╗
-# ║ Paso 2.4 — Agregamos PepperoniPizza y VeggiePizza       ║
-# ║ en factory/abstract_factory/pizza.py                    ║
-# ╚═════════════════════════════════════════════════════════╝
+# ═════════════════════════════════════════════════════════
+#  Paso 2.4 — Agregamos PepperoniPizza y VeggiePizza
+#  en factory/abstract_factory/pizza.py
+# ═════════════════════════════════════════════════════════
 class PepperoniPizza(Pizza):
     def prepare(self):
         print(f"Preparing {self.name}")
