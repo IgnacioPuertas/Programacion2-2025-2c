@@ -1,0 +1,4 @@
+# Requirements Para Factory Pattern
+# Compatible con Python 3.11+
+
+pytest>=7.4
