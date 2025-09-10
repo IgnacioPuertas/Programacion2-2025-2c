@@ -32,10 +32,7 @@ class Clams:
     def __str__(self):
         return self.name
 
-# ════════════════════════════════════════════════════════════
-# Paso 2.1 — Creamos las clases para los      
-# ingredientes nuevos (Veggies y Pepperoni). 
-# ════════════════════════════════════════════════════════════
+
 class Veggies:
     def __init__(self, name: str):
         self.name = name
@@ -61,23 +58,11 @@ class PizzaIngredientFactory(ABC):
     def create_cheese(self) -> Cheese: ...
     @abstractmethod
     def create_clam(self) -> Clams: ...
-
-# ════════════════════════════════════════════════════════════
-# Paso 2.2 — Agregamos nuevos métodos abstractos                        
-# para crear los tipos de ingredientes (Veggies y Pepperoni).          
-# ════════════════════════════════════════════════════════════
     @abstractmethod
     def create_veggies(self) -> list["Veggies"]: ...
     @abstractmethod
     def create_pepperoni(self) -> Pepperoni: ...
 
-
-# ════════════════════════════════════════════════════════════
-# Paso 2.3 — Actualizamos las fábricas concretas:                       
-# Implementamos create_veggies() y create_pepperoni() en                
-# NYPizzaIngredientFactory y ChicagoPizzaIngredientFactory,             
-# devolviendo familias de ingredientes según la región.               
-# ════════════════════════════════════════════════════════════
 
 # Concrete factories
 class NYPizzaIngredientFactory(PizzaIngredientFactory):
@@ -88,10 +73,8 @@ class NYPizzaIngredientFactory(PizzaIngredientFactory):
     def create_cheese(self) -> Cheese:
         return Cheese("Reggiano Cheese")
     def create_clam(self) -> Clams:   return Clams("Fresh Clams")
-
     def create_veggies(self) -> list:
         return [Veggies("Garlic"), Veggies("Onion"), Veggies("Mushroom"), Veggies("Red Pepper")]
-    
     def create_pepperoni(self) -> Pepperoni:
         return Pepperoni("Sliced Pepperoni")
 
@@ -104,7 +87,6 @@ class ChicagoPizzaIngredientFactory(PizzaIngredientFactory):
     def create_cheese(self) -> Cheese:
         return Cheese("Mozzarella Cheese")
     def create_clam(self) -> Clams:   return Clams("Frozen Clams")
-
     def create_veggies(self) -> list:
         return [Veggies("Black Olives"), Veggies("Spinach"), Veggies("Eggplant")]
     def create_pepperoni(self) -> Pepperoni:
