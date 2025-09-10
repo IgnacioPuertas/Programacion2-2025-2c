@@ -9,7 +9,6 @@ class Pizza(ABC):
         self.sauce = None
         self.cheese = None
         self.clam = None
-        # Paso 2: Agregamos nuevos atributos (veggies y pepperoni):
         self.veggies = [  ]  
         self.pepperoni = None 
 
@@ -43,10 +42,6 @@ class ClamPizza(Pizza):
         print(" ->", self.dough, "/", self.sauce, "/", self.cheese, "/", self.clam)
 
 
-# ═════════════════════════════════════════════════════════
-#  Paso 2.4 — Agregamos PepperoniPizza y VeggiePizza
-#  en factory/abstract_factory/pizza.py
-# ═════════════════════════════════════════════════════════
 class PepperoniPizza(Pizza):
     def prepare(self):
         print(f"Preparing {self.name}")
