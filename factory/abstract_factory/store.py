@@ -10,10 +10,6 @@ class PizzaStore(ABC):
     @abstractmethod
     def create_pizza(self, kind: str) -> Pizza: ...
 
-# ═════════════════════════════════════════════════════════════════
-# Paso 2.5 — Modificamos NYPizzaStore y ChicagoPizzaStore para que      
-# puedan crear instancias de VeggiePizza y PepperoniPizza               
-# ═════════════════════════════════════════════════════════════════
 class NYPizzaStore(PizzaStore):
     def __init__(self): self.factory: PizzaIngredientFactory = NYPizzaIngredientFactory()
     def create_pizza(self, kind: str) -> Pizza:
