@@ -1,10 +1,11 @@
-
 from datetime import datetime
 from sqlmodel import SQLModel, Field
 import uuid
 
+
 def _uuid() -> str:
     return str(uuid.uuid4())
+
 
 class Usuario(SQLModel, table=True):
     id: str = Field(default_factory=_uuid, primary_key=True)
@@ -13,12 +14,14 @@ class Usuario(SQLModel, table=True):
     rol: str = Field(default="familiar")
     creado_en: datetime = Field(default_factory=datetime.utcnow)
 
+
 class Profesional(SQLModel, table=True):
     id: str = Field(default_factory=_uuid, primary_key=True)
     id_usuario: str = Field(foreign_key="usuario.id", index=True)
     matricula: str | None = Field(default=None, index=True)
     especialidad: str = "AT"
     verificado: bool = Field(default=False)
+
 
 class Turno(SQLModel, table=True):
     id: str = Field(default_factory=_uuid, primary_key=True)

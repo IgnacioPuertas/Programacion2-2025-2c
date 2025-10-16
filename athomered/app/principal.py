@@ -1,9 +1,9 @@
-
 from contextlib import asynccontextmanager
 from fastapi import FastAPI
 from app.api.enrutador import api
 from app.infraestructura.bd import inicializar_bd
 from app.nucleo.observadores import registrar_observadores
+
 
 @asynccontextmanager
 async def vida(app: FastAPI):
@@ -11,8 +11,10 @@ async def vida(app: FastAPI):
     registrar_observadores()
     yield
 
+
 app = FastAPI(title="AT home Red - API (MVP)", lifespan=vida)
 app.include_router(api)
+
 
 @app.get("/salud", tags=["monitor"])
 def salud():
